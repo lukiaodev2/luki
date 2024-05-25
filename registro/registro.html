@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+
+    <!-- IMPORTAMOS EL CSS NECESARIO PARA EL FUNCIONAMIENTO DE BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- IMPORTAMOS EL CSS DE GOOGLE PARA LOS ICONOS "MATERIAL ICONS" -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- IMPORTAMOS EL CSS PROPIO -->
+    <link rel="stylesheet" href="registro.css" />
+  </head>
+  <body>
+    <div class="container-fluid login_container">
+      <!--FORMULARIO DESCARGADO DESDE BOOTSTRAP "https://getbootstrap.com/docs/5.0/forms/validation/"-->
+      <form id="formulario_registro" class="form_login row g-3">
+        <!-- TITULO DEL FORUMLARIO -->
+        <div class="form_title">Registro</div>
+        <div class="row">
+          <div class="col">
+            <label for="nombresRegistro" class="form-label">Nombres</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombresRegistro"
+              placeholder="Ingresa tus nombres"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="apellidosRegistro" class="form-label">Apellidos</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidosRegistro"
+              placeholder="Ingresa tus apellidos"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="emailRegistro" class="form-label"
+              >Correo Electronico</label
+            >
+            <div class="input-group">
+              <span class="input-group-text" id="inputGroupPrepend2">@</span>
+              <input
+                type="email"
+                class="form-control"
+                id="emailRegistro"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <label for="dirRegistro" class="form-label">Dirección</label>
+            <input
+              type="text"
+              class="form-control"
+              id="dirRegistro"
+              placeholder="Dirección"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="barrioRegistro" class="form-label">Barrio</label>
+            <input
+              type="text"
+              class="form-control"
+              id="barrioRegistro"
+              placeholder="Barrio"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="telRegistro" class="form-label">Telefono</label>
+            <input
+              type="number"
+              class="form-control"
+              id="telRegistro"
+              placeholder="Telefono"
+              required
+            />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <label for="rolRegistro" class="form-label"
+              >Seleccione su rol</label
+            >
+            <select
+              class="form-select"
+              id="rolRegistro"
+              onchange="verInfoAdicional(this)"
+              required
+            >
+              <option selected disabled value="">Seleccione...</option>
+              <option value="asesora">Asesora</option>
+              <option value="supervisor">Supervisor</option>
+            </select>
+          </div>
+        </div>
+        <div id="informacion_adicional_asesora" class="row mt-4" hidden>
+          <div class="col">
+            <label for="tallablusaRegistro" class="form-label"
+              >Talla blusa</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="tallablusaRegistro"
+              placeholder="Talla blusa"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="tallafaldaRegistro" class="form-label"
+              >Talla falda</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="tallafaldaRegistro"
+              placeholder="Talla falda"
+              required
+            />
+          </div>
+        </div>
+        <div id="informacion_adicional_supervisor" class="row mt-4" hidden>
+          <div class="col">
+            <label for="tallacamisaRegistro" class="form-label"
+              >Talla camisa</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="tallacamisaRegistro"
+              placeholder="Talla camisa"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="tallapantalonRegistro" class="form-label"
+              >Talla Pantalon</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="tallapantalonRegistro"
+              placeholder="Talla Pantalon"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="placamotoRegistro" class="form-label">Placa Moto</label>
+            <input
+              type="text"
+              class="form-control"
+              id="placamotoRegistro"
+              placeholder="Placa Moto"
+              maxlength="7"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12 buttons_container">
+          <button onclick="registrarse()" class="btn btn-primary mb-3">
+            REGISTRATE
+          </button>
+          <p>¿No tienes cuenta?</p>
+          <a class="btn btn-primary" href="../login/login.html">INGRESAR</a>
+        </div>
+      </form>
+
+      <div class="footer_color"></div>
+    </div>
+
+    <!-- IMPORTAMOS EL JS NECESAIRO PARA EL FUNCIONAMIENTO DE BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- IMPORTAMOS EL JS PROPIO -->
+    <script src="function.js"></script>
+  </body>
+</html>

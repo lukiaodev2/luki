@@ -1,0 +1,49 @@
+.hidden {
+  display: none;
+}
+
+.full-h {
+  height: 100vh;
+}
+
+.home_container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 0 !important;
+}
+
+.cutsom_side_bar {
+  width: 15%;
+  background-color: rgb(232, 232, 232);
+}
+
+.cutsom_side_bar .title_nav {
+  font-size: 35px;
+  color: purple;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cutsom_side_bar .nav-item a {
+  color: purple;
+}
+
+.cutsom_side_bar .nav-item a:hover {
+  background-color: purple !important;
+  color: white;
+}
+
+.cutsom_side_bar .nav-item .active {
+  background-color: purple !important;
+}
+
+.page_content {
+  width: 85%;
+  margin-top: 90px;
+}
+
+.page_content section {
+  width: 100%;
+}

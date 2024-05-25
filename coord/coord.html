@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinador de cobros</title>
+    <!-- Enlaces a los archivos CSS de Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="coord.css" />
+  </head>
+  <body>
+    <div class="container-fluid home_container">
+      <!-- Sidebar -->
+      <div class="cutsom_side_bar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white">
+          <span class="title_nav">Luki</span>
+
+          <ul class="nav nav-pills flex-column mb-auto mt-4">
+            <li class="nav-item">
+              <a
+                href="#"
+                onclick="changeNavOption(this)"
+                class="nav-link active"
+                data-nav="coordinador"
+              >
+                Coordinador de cobros
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#"
+                onclick="changeNavOption(this)"
+                class="nav-link"
+                data-nav="asesoras"
+              >
+                Panel de asesoras
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#"
+                onclick="changeNavOption(this)"
+                class="nav-link"
+                data-nav="supervisores"
+                >Panel de supervisores</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="../login/login.html"
+                onclick="changeNavOption(this)"
+                class="nav-link"
+                >Cerrar Sesion</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="page_content">
+        <section id="coordinador" class="px-3">
+          <h1>Coordinador de cobros</h1>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo Electronico</th>
+                  <th scope="col">Asesora</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Supervisor</th>
+                  <th scope="col">Barrio</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Monto Solicitado</th>
+                  <th scope="col">Número Cuotas</th>
+                  <th scope="col">Estado Prestamo</th>
+                </tr>
+              </thead>
+              <tbody id="body_coord"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="asesoras" class="px-3 hidden">
+          <h1>Panel de asesoras</h1>
+          <p>Aquí va el contenido principal de tu página.</p>
+        </section>
+        <section id="supervisores" class="px-3 hidden">
+          <h1>Panel de supervisores</h1>
+          <p>Aquí va el contenido principal de tu página.</p>
+        </section>
+      </div>
+    </div>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="coord.js"></script>
+  </body>
+</html>
