@@ -20,15 +20,15 @@ const verInfoAdicional = (element) => {
 }
 
 //Funcion para capturar y enviar la informacion del forumlario de registro
-const registrarse = () => {
+const registrarse = async () => {
   //objeto que contiene toda la informacion del formulario de registro
   const obj = {
-    nombres: document.querySelector("#nombresRegistro").value,
-    apellidos: document.querySelector("#apellidosRegistro").value,
+    nombre: document.querySelector("#nombresRegistro").value,
+    apellido: document.querySelector("#apellidosRegistro").value,
     email: document.querySelector("#emailRegistro").value,
-    dir: document.querySelector("#dirRegistro").value,
+    direccion: document.querySelector("#dirRegistro").value,
     barrio: document.querySelector("#barrioRegistro").value,
-    tel: document.querySelector("#telRegistro").value,
+    telefono: document.querySelector("#telRegistro").value,
     rol: document.querySelector("#rolRegistro").value
   };
 
@@ -46,6 +46,20 @@ const registrarse = () => {
   }
 
   console.log("formData: ", obj);
+  let res = null;
+
+  await axios.post('../backend/acciones.php', {"accion": "crear", "data": obj}).
+    then(function(response){
+      res = response.data;
+    }).catch(function(error){
+      console.log("error: ", error);
+    });
+
+  if(res){
+    //ingresar al index
+    console.log("ingresamos la index");
+  }
+
 }
 
 
